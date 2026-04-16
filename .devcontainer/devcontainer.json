@@ -1,0 +1,18 @@
+{
+  "name": "Python ML Ops Environment",
+  "image": "mcr.microsoft.com/devcontainers/python:3.10",  // Imagem base com Python
+  "features": {
+    "ghcr.io/devcontainers/features/azure-cli:1": {}  // Adiciona Azure CLI para trabalhar com Azure ML
+  },
+  "containerEnv": {
+    "AZURE_SUBSCRIPTION_ID": "${secrets:AZURE_SUBSCRIPTION_ID}",  // Segredo do GitHub
+    "AZURE_RESOURCE_GROUP": "demo-try-azureml",  // Valor padrão (ou substitua por um real)
+    "AZURE_WORKSPACE_NAME": "demo-try-azureml",  // Valor padrão
+    "AZURE_WORKSPACE_REGION": "eastus2"  // Valor padrão (região do Azure, ex.: eastus2)
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python", "ms-toolsai.vscode-azureml"]  // Extensões úteis para Python e Azure ML
+    }
+  }
+}
